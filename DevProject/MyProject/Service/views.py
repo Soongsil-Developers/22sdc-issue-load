@@ -22,10 +22,10 @@ def Kword_save(request):
     body = json.loads(request.body.decode("utf-8"))
     time_data = body["date"]
     key_list = body["keywords"]
-    DB_store = database()
     for data in key_list:
         words = data.split(" ")
         for word in words:
+            DB_store = database()
             DB_store.time = time_data
             DB_store.key_word = word
             DB_store.save()

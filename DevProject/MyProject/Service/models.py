@@ -10,5 +10,6 @@ from django.db import models
 
 
 class database(models.Model):
-    key_word = models.CharField(max_length=20, default="", primary_key=True)
+    id = models.AutoField(primary_key=True)
+    key_word = models.CharField(max_length=20, default="")
     time = models.DateTimeField()
